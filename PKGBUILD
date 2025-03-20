@@ -54,7 +54,7 @@ pkgver(){
   
   # the dts changes do not need to be counted as a revision to prevent too frequent updates 
   local _kcommits=$(gitweb-dlagent version ${_url_kernel} --pattern \{revision\})
-  local _khash=$(gitweb-dlagent version ${_url_kernel} --pattern \{commit:.10s\})
+  local _khash=$(gitweb-dlagent version ${_url_kernel} --pattern \{commit:.8s\})
 
   local _revnum=$(($_kcommits + $_ocommits + $_bcommits + $pkgrel))
   local _version="${_pkgver}.${_revnum}.${_khash}"
